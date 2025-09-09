@@ -42,9 +42,9 @@ const ContactForm = () => {
     const { name, value, type, checked } = e?.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value.trim()  // Ensure trimming spaces here
     }));
-    
+
     // Clear error when user starts typing
     if (errors?.[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -54,35 +54,63 @@ const ContactForm = () => {
   const validateForm = () => {
     const newErrors = {};
     
+    // Ensure all inputs are trimmed of any spaces
     if (!formData?.firstName?.trim()) newErrors.firstName = 'First name is required';
     if (!formData?.lastName?.trim()) newErrors.lastName = 'Last name is required';
     if (!formData?.email?.trim()) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/?.test(formData?.email)) newErrors.email = 'Email is invalid';
     if (!formData?.phone?.trim()) newErrors.phone = 'Phone number is required';
-    if (!formData?.company?.trim()) newErrors.company = 'Company name is required';
+    
     if (!formData?.message?.trim()) newErrors.message = 'Message is required';
     if (!formData?.privacy) newErrors.privacy = 'You must accept the privacy policy';
     
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
-    e?.preventDefault();
-    
-    const newErrors = validateForm();
-    if (Object.keys(newErrors)?.length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-    
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 2000);
+  // Handle form submission
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const newErrors = validateForm();
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  const formDataToSend = {
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    email: formData.email,
+    phone: formData.phone,
+    company: formData.company,
+    message: formData.message,
+    privacy: formData.privacy,
   };
+
+
+
+  try {
+    const apiUrl = import.meta.env.VITE_REACT_APP_API_URL || 'http://localhost:3000/api/contact';
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formDataToSend),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      setIsSubmitted(true);
+    } else {
+      setErrors({ form: result.message });
+    }
+  } catch (error) {
+    setErrors({ form: 'An error occurred while submitting the form.' });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   if (isSubmitted) {
     return (
@@ -164,19 +192,17 @@ const ContactForm = () => {
                       <p className="text-muted-foreground">+91 8793830447</p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center space-x-3">
+                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
                       <Icon name="Mail" size={20} className="text-accent" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
                       <a href="mailto:work@CloudNexus.in" className="text-muted-foreground">
-  work@CloudNexus.in
-</a>
+                        work@CloudNexus.in
+                      </a>
                     </div>
                   </div>                
-                
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-border">
@@ -217,8 +243,7 @@ const ContactForm = () => {
                     required
                     placeholder="John"
                   />
-                  
-                  <Input
+                   <Input
                     label="Last Name"
                     type="text"
                     name="lastName"
@@ -241,8 +266,7 @@ const ContactForm = () => {
                     required
                     placeholder="john@company.com"
                   />
-                  
-                  <Input
+                   <Input
                     label="Phone Number"
                     type="tel"
                     name="phone"
@@ -253,8 +277,6 @@ const ContactForm = () => {
                     placeholder="+91 8793830447"
                   />
                 </div>
-
-               
 
                 <div className="mb-6">
                   <label className="block text-sm font-medium text-foreground mb-2">
@@ -278,13 +300,12 @@ const ContactForm = () => {
                   <Checkbox
                     label="I'd like to receive updates about CloudNexus services and industry insights"
                     checked={formData?.newsletter}
-                    onChange={(e) => setFormData(prev => ({ ...prev, newsletter: e?.target?.checked }))}
+                    onChange={(e) => setFormData(prev => ({ ...prev, newsletter: e?.target?.checked }))} 
                   />
-                  
-                  <Checkbox
+                   <Checkbox
                     label="I agree to the Privacy Policy and Terms of Service"
                     checked={formData?.privacy}
-                    onChange={(e) => setFormData(prev => ({ ...prev, privacy: e?.target?.checked }))}
+                    onChange={(e) => setFormData(prev => ({ ...prev, privacy: e?.target?.checked }))} 
                     error={errors?.privacy}
                     required
                   />
