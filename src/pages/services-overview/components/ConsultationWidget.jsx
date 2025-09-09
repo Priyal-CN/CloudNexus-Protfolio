@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
@@ -6,6 +6,8 @@ import Button from '../../../components/ui/Button';
 const ConsultationWidget = ({ currentService }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentMessage, setCurrentMessage] = useState(0);
+  const [isClosed, setIsClosed] = useState(false);
+  const scrollHandlerRef = useRef(null);
 
   const messages = [
     {
@@ -25,44 +27,51 @@ const ConsultationWidget = ({ currentService }) => {
     }
   ];
 
+  // Scroll handler
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 300;
-      setIsVisible(scrolled);
+    if (isClosed) return; // don't show again if already closed this session
+
+    scrollHandlerRef.current = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // run immediately if already scrolled
+    scrollHandlerRef.current();
 
+    window.addEventListener('scroll', scrollHandlerRef.current, { passive: true });
+    return () => {
+      if (scrollHandlerRef.current) {
+        window.removeEventListener('scroll', scrollHandlerRef.current);
+      }
+    };
+  }, [isClosed]);
+
+  // Rotate messages
   useEffect(() => {
+    if (!isVisible) return;
     const interval = setInterval(() => {
-      setCurrentMessage((prev) => (prev + 1) % messages?.length);
+      setCurrentMessage((prev) => (prev + 1) % messages.length);
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [messages?.length]);
+  }, [isVisible]);
 
-  const getCurrentMessage = () => {
-    if (currentService && serviceSpecificMessages?.[currentService]) {
-      return serviceSpecificMessages?.[currentService];
-    }
-    return messages?.[currentMessage];
+  const handleClose = () => {
+    setIsVisible(false);
+    setIsClosed(true); // prevent popup from showing again in this session
   };
 
-  const message = getCurrentMessage();
+  if (isClosed) return null;
+
+  const message = messages[currentMessage];
 
   return (
     isVisible && (
-      <div
-        className={`fixed right-6 bottom-6 z-40 transition-all duration-500 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-        }`}
-      >
+      <div className="fixed right-6 bottom-6 z-40 transition-all duration-500 translate-y-0 opacity-100">
         <div className="bg-card border border-border rounded-xl shadow-card-hover p-6 max-w-sm relative">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
-            {/* Left Icon + Title */}
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
                 <Icon name="MessageSquare" size={16} color="white" />
@@ -72,18 +81,15 @@ const ConsultationWidget = ({ currentService }) => {
               </span>
             </div>
 
-            {/* Right: Status + Close */}
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
                 <span className="text-xs text-success font-medium">Online</span>
               </div>
 
-              {/* Close Icon */}
               <button
-                onClick={() => setIsVisible(false)}
-                className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center 
-                           hover:bg-accent/90 transition-colors duration-200"
+                onClick={handleClose}
+                className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center hover:bg-accent/90 transition-colors duration-400"
                 aria-label="Close"
               >
                 <Icon name="X" size={16} color="white" />
@@ -91,7 +97,7 @@ const ConsultationWidget = ({ currentService }) => {
             </div>
           </div>
 
-          {/* Message Content */}
+          {/* Message */}
           <div className="mb-4">
             <h4 className="text-lg font-bold text-foreground mb-2">
               {message?.title}
@@ -101,7 +107,7 @@ const ConsultationWidget = ({ currentService }) => {
             </p>
           </div>
 
-          {/* Trust Indicators */}
+          {/* Trust */}
           <div className="flex items-center justify-between mb-4 text-xs text-muted-foreground">
             <div className="flex items-center space-x-1">
               <Icon name="Shield" size={12} />
@@ -113,7 +119,7 @@ const ConsultationWidget = ({ currentService }) => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <div className="space-y-2">
             <Link to="/contact-consultation">
               <Button

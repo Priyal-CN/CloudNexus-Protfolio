@@ -224,7 +224,7 @@ const ProjectDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
           {/* Challenges */}
           <div className="lg:col-span-4">
-            <div className="bg-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 rounded-3xl p-8 shadow-xl shadow-blue-500/25 h-full text-slate-900 hover:text-white transition-all duration-300">
+            <div className="bg-white hover:bg-gradient-to-br hover:from-red-500 hover:to-red-600 rounded-3xl p-8 shadow-xl shadow-blue-500/25 h-full text-slate-900 hover:text-white transition-all duration-300">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4 shadow-lg shadow-red-500/25">
                   <Icon name="AlertTriangle" className="text-white" size={20} />
@@ -251,10 +251,10 @@ const ProjectDetail = () => {
 
           {/* Solution */}
           <div className="lg:col-span-4">
-            <div className="bg-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 rounded-3xl p-8 shadow-xl shadow-blue-500/25 h-full text-slate-900 hover:text-white transition-all duration-300">
+            <div className="bg-white hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 rounded-3xl p-8 shadow-xl shadow-blue-500/25 h-full text-slate-900 hover:text-white transition-all duration-300">
               <div className="flex items-center mb-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4 shadow-lg shadow-red-500/25">
-                  <Icon name="AlertTriangle" className="text-white" size={20} />
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg shadow-red-500/25">
+                  <Icon name="Lightbulb" className="text-white" size={20} />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider">
@@ -267,7 +267,7 @@ const ProjectDetail = () => {
                 {project?.solution?.map((challenge, i) => (
                   <div key={i} className="group">
                     <div className="flex items-start">
-                      <div className="w-1 h-6 bg-gradient-to-b from-red-500 to-red-600 rounded-full mr-4 mt-1 flex-shrink-0"></div>
+                      <div className="w-1 h-6 bg-gradient-to-b from-green-500 to-green-600 rounded-full mr-4 mt-1 flex-shrink-0"></div>
                       <p className="leading-relaxed font-light">{challenge}</p>
                     </div>
                   </div>
@@ -280,8 +280,8 @@ const ProjectDetail = () => {
           <div className="lg:col-span-4">
             <div className="bg-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 rounded-3xl p-8 shadow-xl shadow-blue-500/25 h-full text-slate-900 hover:text-white transition-all duration-300">
               <div className="flex items-center mb-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4 shadow-lg shadow-red-500/25">
-                  <Icon name="AlertTriangle" className="text-white" size={20} />
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg shadow-red-500/25">
+                  <Icon name="TrendingUp" className="text-white" size={20} />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider">
@@ -294,7 +294,7 @@ const ProjectDetail = () => {
                 {project?.outcome?.map((challenge, i) => (
                   <div key={i} className="group">
                     <div className="flex items-start">
-                      <div className="w-1 h-6 bg-gradient-to-b from-red-500 to-red-600 rounded-full mr-4 mt-1 flex-shrink-0"></div>
+                      <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full mr-4 mt-1 flex-shrink-0"></div>
                       <p className="leading-relaxed font-light">{challenge}</p>
                     </div>
                   </div>

@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import Header from '../../components/ui/Header';
-import TeamOverview from './components/TeamOverview';
-import TeamMemberCard from './components/TeamMemberCard';
-import TeamCulture from './components/TeamCulture';
-import ContactCTA from './components/ContactCTA';
-import Footer from 'components/ui/Footer';
+import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
+import Header from "../../components/ui/Header";
+import TeamOverview from "./components/TeamOverview";
+import TeamMemberCard from "./components/TeamMemberCard";
+import TeamCulture from "./components/TeamCulture";
+import ContactCTA from "./components/ContactCTA";
+import Footer from "components/ui/Footer";
 import CEOImage from "../../assets/CEO_Image.png";
 import CTOImage from "../../assets/CTO_Image.png";
 import CMOImage from "../../assets/CMO_Image.png";
 import JavaLeadImage from "../../assets/JavaLead_Image.png";
+import MERNLeadImage from "../../assets/MERN-StackLead_.png";
 import DataLeadImg from "../../assets/DataLead_Image.png";
 
 const TeamLeadership = () => {
@@ -27,20 +28,15 @@ const TeamLeadership = () => {
         "Market Analysis",
         "Partnership Development",
         "Executive Consulting",
-        "Research"
+        "Research",
       ],
       socialLinks: [
-        { 
-          platform: "LinkedIn", 
-          icon: "Linkedin", 
+        {
+          platform: "LinkedIn",
+          icon: "Linkedin",
           url: "https://www.linkedin.com/in/kaustubh-singh-930770237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         },
-        { 
-          platform: "GitHub", 
-          icon: "Github", 
-          url: "#",
-        }
-      ]
+      ],
     },
     {
       id: 2,
@@ -48,50 +44,37 @@ const TeamLeadership = () => {
       position: "Chief Technology Officer",
       avatar: CTOImage,
       expertise: [
-        "AWS", 
-        "Azure", 
-        "Cloud Infrastructure", 
-        "Infrastructure as Code", 
-        "Cost Optimization", 
-        "Security"
+        "DevOps & Automation",
+        "Cloud Platforms",
+        "Docker & Kubernetes",
       ],
       socialLinks: [
-        { 
-          platform: "LinkedIn", 
-          icon: "Linkedin", 
+        {
+          platform: "LinkedIn",
+          icon: "Linkedin",
           url: "https://www.linkedin.com/in/yashsingh3148?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         },
-        { 
-          platform: "GitHub", 
-          icon: "Github", 
-          url: "#",
-        }
-      ]
+      ],
     },
     {
       id: 3,
       name: "Aryan Patel",
-      position: "Chief Marketing Officer",
+      position: "Lead Business Analyst",
       avatar: CMOImage,
       expertise: [
-        "Cloud Management", 
-        "Saas Development", 
-        "Risk Management", 
-        "IT Consulting", 
-        "Web Design"
+        "Cloud Management",
+        "Saas Development",
+        "Risk Management",
+        "IT Consulting",
+        "Web Design",
       ],
       socialLinks: [
-        { 
-          platform: "LinkedIn", 
-          icon: "Linkedin", 
+        {
+          platform: "LinkedIn",
+          icon: "Linkedin",
           url: "https://www.linkedin.com/in/aryan-patel-43224b2b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         },
-        { 
-          platform: "GitHub", 
-          icon: "Github", 
-          url: "#",
-        }
-      ]
+      ],
     },
     {
       id: 4,
@@ -100,17 +83,12 @@ const TeamLeadership = () => {
       avatar: JavaLeadImage,
       expertise: ["Java Full Stack", "Angular", "React", "TypeScript"],
       socialLinks: [
-        { 
-          platform: "LinkedIn", 
-          icon: "Linkedin", 
+        {
+          platform: "LinkedIn",
+          icon: "Linkedin",
           url: "https://www.linkedin.com/in/harsh-dwivedi17?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         },
-        { 
-          platform: "GitHub", 
-          icon: "Github", 
-          url: "#",
-        }
-      ]
+      ],
     },
     {
       id: 5,
@@ -119,18 +97,27 @@ const TeamLeadership = () => {
       avatar: DataLeadImg,
       expertise: ["VP Data Scientist", "Data Engineer", "Python"],
       socialLinks: [
-        { 
-          platform: "LinkedIn", 
-          icon: "Linkedin", 
+        {
+          platform: "LinkedIn",
+          icon: "Linkedin",
           url: "https://www.linkedin.com/in/shoaib-akhtar-0b69a0192?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         },
-        { 
-          platform: "GitHub", 
-          icon: "Github", 
-          url: "#",
-        }
-      ]
-    }
+      ],
+    },
+    {
+      id: 6,
+      name: "Ajay Vishwakarma",
+      position: "MERN Stack Lead",
+      avatar: MERNLeadImage,
+      expertise: ["MERN Stack Developer", "Next-Gen Web Architect"],
+      socialLinks: [
+        {
+          platform: "LinkedIn",
+          icon: "Linkedin",
+          url: "https://www.linkedin.com/in/ajay-vishwakarma-3409a0225?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BvEQBEqC5TcCE2SLr%2Bdghsw%3D%3D",
+        },
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -141,13 +128,13 @@ const TeamLeadership = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>CloudNexus Portfolio</title>
-        <meta 
-          name="description" 
-          content="Meet the visionary leaders who combine deep technical expertise with strategic business acumen to deliver transformational technology solutions." 
+        <meta
+          name="description"
+          content="Meet the visionary leaders who combine deep technical expertise with strategic business acumen to deliver transformational technology solutions."
         />
-        <meta 
-          name="keywords" 
-          content="technology leadership, CTO, engineering team, innovation, digital transformation" 
+        <meta
+          name="keywords"
+          content="technology leadership, CTO, engineering team, innovation, digital transformation"
         />
       </Helmet>
       <Header />
@@ -163,17 +150,16 @@ const TeamLeadership = () => {
                 Meet Our Leadership Team
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-                Industry veterans and innovative thinkers who bring decades of experience in building and scaling technology solutions for global enterprises.
+                Industry veterans and innovative thinkers who bring decades of
+                experience in building and scaling technology solutions for
+                global enterprises.
               </p>
             </div>
 
             {/* Team Members Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredMembers?.map((member) => (
-                <TeamMemberCard 
-                  key={member?.id}
-                  member={member}
-                />
+                <TeamMemberCard key={member?.id} member={member} />
               ))}
             </div>
 

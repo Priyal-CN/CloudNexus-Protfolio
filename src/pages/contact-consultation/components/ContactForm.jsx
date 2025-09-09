@@ -254,27 +254,7 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <Input
-                    label="Company Name"
-                    type="text"
-                    name="company"
-                    value={formData?.company}
-                    onChange={handleInputChange}
-                    error={errors?.company}
-                    required
-                    placeholder="Your Company Inc."
-                  />
-                  
-                  <Input
-                    label="Job Title"
-                    type="text"
-                    name="jobTitle"
-                    value={formData?.jobTitle}
-                    onChange={handleInputChange}
-                    placeholder="CTO, Product Manager, etc."
-                  />
-                </div>
+               
 
                 <div className="mb-6">
                   <label className="block text-sm font-medium text-foreground mb-2">

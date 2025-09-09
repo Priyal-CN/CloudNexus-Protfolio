@@ -41,7 +41,7 @@ const TeamMemberCard = ({ member }) => {
       {/* Expertise Tags */}
       <div className="px-6 pb-4">
         <div className="flex flex-wrap gap-2">
-          {member?.expertise?.slice(0, 3)?.map((skill, index) => (
+          {member?.expertise?.slice(0, 4)?.map((skill, index) => (
             <span
               key={index}
               className="px-3 py-1 bg-trust text-accent text-xs font-medium rounded-full"
@@ -49,11 +49,7 @@ const TeamMemberCard = ({ member }) => {
               {skill}
             </span>
           ))}
-          {member?.expertise?.length > 3 && (
-            <span className="px-3 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full">
-              +{member?.expertise?.length - 3} more
-            </span>
-          )}
+          
         </div>
       </div>
       

@@ -18,11 +18,12 @@ const Footer = () => {
                 />
               </div>
             </div>
-            <p className="text-primary-foreground/80 mb-4 leading-relaxed">
-              Transforming businesses through innovative technology solutions.
-              We partner with forward-thinking companies to deliver measurable
-              results and sustainable growth.
-            </p>
+            <p className="text-primary-foreground/80 mb-4 leading-relaxed pr-6">
+  Transforming businesses through innovative technology solutions.
+  We partner with forward-thinking companies to 
+  deliver measurable results and sustainable growth.
+</p>
+
 
             {/* Social Links */}
             <div className="flex space-x-4">
