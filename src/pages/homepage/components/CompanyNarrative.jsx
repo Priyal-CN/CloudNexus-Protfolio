@@ -60,7 +60,7 @@ const CompanyNarrative = () => {
       <div className="container-brand">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Your Transformation Journey
+            Our Transformation Journey
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             From initial challenge to measurable success, we guide you through every step of your digital transformation.

@@ -161,7 +161,7 @@ const ContactForm = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+91 8793830447</p>
                     </div>
                   </div>
                   
@@ -171,7 +171,9 @@ const ContactForm = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <p className="text-muted-foreground">work@CloudNexus.in</p>
+                      <a href="mailto:work@CloudNexus.in" className="text-muted-foreground">
+  work@CloudNexus.in
+</a>
                     </div>
                   </div>                
                 
@@ -248,7 +250,7 @@ const ContactForm = () => {
                     onChange={handleInputChange}
                     error={errors?.phone}
                     required
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+91 8793830447"
                   />
                 </div>
 

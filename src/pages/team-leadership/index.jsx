@@ -10,22 +10,40 @@ import CEOImage from "../../assets/CEO_Image.png";
 import CTOImage from "../../assets/CTO_Image.png";
 import CMOImage from "../../assets/CMO_Image.png";
 import JavaLeadImage from "../../assets/JavaLead_Image.png";
-import DataLeadImg from "../../assets/DataLead_Image.png"
+import DataLeadImg from "../../assets/DataLead_Image.png";
 
 const TeamLeadership = () => {
   const [filteredMembers, setFilteredMembers] = useState([]);
 
   const teamMembers = [
- 
     {
       id: 1,
       name: "Kaustubh Singh",
       position: "Chief Executive Officer",
       avatar: CEOImage,
-      expertise: ["Business Strategy", "Digital Transformation", "Market Analysis", "Partnership Development", "Executive Consulting","Research"],
+      expertise: [
+        "Business Strategy",
+        "Digital Transformation",
+        "Market Analysis",
+        "Partnership Development",
+        "Executive Consulting",
+        "Research"
+      ],
       socialLinks: [
-         { platform: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/in/kaustubh-singh-930770237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-         { platform: "GitHub", icon: "Github", url: "#" },
+        { 
+          platform: "LinkedIn", 
+          icon: "Linkedin", 
+          url: "https://www.linkedin.com/in/kaustubh-singh-930770237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        },
+        { 
+          platform: "GitHub", 
+          icon: "Github", 
+          url: "#",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }
       ]
     },
     {
@@ -33,11 +51,29 @@ const TeamLeadership = () => {
       name: "Yash Singh",
       position: "Chief Technology Officer",
       avatar: CTOImage,
-      expertise: ["AWS", "Azure", "Cloud Infrastructure ", "Infrastructure as Code", "Cost Optimization", "Security"],
-      
+      expertise: [
+        "AWS", 
+        "Azure", 
+        "Cloud Infrastructure", 
+        "Infrastructure as Code", 
+        "Cost Optimization", 
+        "Security"
+      ],
       socialLinks: [
-        { platform: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/in/yashsingh3148?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-        { platform: "GitHub", icon: "Github", url: "#" },
+        { 
+          platform: "LinkedIn", 
+          icon: "Linkedin", 
+          url: "https://www.linkedin.com/in/yashsingh3148?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        },
+        { 
+          platform: "GitHub", 
+          icon: "Github", 
+          url: "#",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }
       ]
     },
     {
@@ -45,11 +81,28 @@ const TeamLeadership = () => {
       name: "Aryan Patel",
       position: "Chief Marketing Officer",
       avatar: CMOImage,
-      expertise: ["Cloud Management", "Saas Development", "Risk Management", "IT Consulting", "Web Design"],
+      expertise: [
+        "Cloud Management", 
+        "Saas Development", 
+        "Risk Management", 
+        "IT Consulting", 
+        "Web Design"
+      ],
       socialLinks: [
-        { platform: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/in/aryan-patel-43224b2b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " },
-        { platform: "GitHub", icon: "Github", url: "#" },
-
+        { 
+          platform: "LinkedIn", 
+          icon: "Linkedin", 
+          url: "https://www.linkedin.com/in/aryan-patel-43224b2b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        },
+        { 
+          platform: "GitHub", 
+          icon: "Github", 
+          url: "#",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }
       ]
     },
     {
@@ -59,9 +112,20 @@ const TeamLeadership = () => {
       avatar: JavaLeadImage,
       expertise: ["Java Full Stack", "Angular", "React", "TypeScript"],
       socialLinks: [
-        { platform: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/in/harsh-dwivedi17?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-        { platform: "GitHub", icon: "Github", url: "#" },
-
+        { 
+          platform: "LinkedIn", 
+          icon: "Linkedin", 
+          url: "https://www.linkedin.com/in/harsh-dwivedi17?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        },
+        { 
+          platform: "GitHub", 
+          icon: "Github", 
+          url: "#",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }
       ]
     },
     {
@@ -71,9 +135,20 @@ const TeamLeadership = () => {
       avatar: DataLeadImg,
       expertise: ["VP Data Scientist", "Data Engineer", "Python"],
       socialLinks: [
-        { platform: "LinkedIn", icon: "Linkedin", url: "https://www.linkedin.com/in/shoaib-akhtar-0b69a0192?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
-        { platform: "GitHub", icon: "Github", url: "#" },
-
+        { 
+          platform: "LinkedIn", 
+          icon: "Linkedin", 
+          url: "https://www.linkedin.com/in/shoaib-akhtar-0b69a0192?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        },
+        { 
+          platform: "GitHub", 
+          icon: "Github", 
+          url: "#",
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }
       ]
     }
   ];
@@ -86,8 +161,14 @@ const TeamLeadership = () => {
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>CloudNexus Portfolio</title>
-        <meta name="description" content="Meet the visionary leaders who combine deep technical expertise with strategic business acumen to deliver transformational technology solutions." />
-        <meta name="keywords" content="technology leadership, CTO, engineering team, innovation, digital transformation" />
+        <meta 
+          name="description" 
+          content="Meet the visionary leaders who combine deep technical expertise with strategic business acumen to deliver transformational technology solutions." 
+        />
+        <meta 
+          name="keywords" 
+          content="technology leadership, CTO, engineering team, innovation, digital transformation" 
+        />
       </Helmet>
       <Header />
       <main className="pt-16 lg:pt-20">
@@ -134,7 +215,7 @@ const TeamLeadership = () => {
       </main>
 
       {/* Footer Section */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
