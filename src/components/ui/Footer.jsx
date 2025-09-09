@@ -3,9 +3,10 @@ import Icon from "../AppIcon"; // adjust path if AppIcon is elsewhere
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
-      <div className="container-brand">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-primary text-primary-foreground py-10">
+      {/* Max width for balance + padding */}
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 justify-between">
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
@@ -32,7 +33,7 @@ const Footer = () => {
                 <span className="sr-only">LinkedIn</span>
                 <Icon name="Linkedin" size={24} />
               </a>
-             
+
               <a
                 href="https://www.instagram.com/cloudnexus.in?igsh=dHZzczFiMjByMXU3"
                 className="text-primary-foreground/60 hover:text-accent transition-colors"
@@ -78,15 +79,13 @@ const Footer = () => {
                   CloudNexus.in
                 </a>
               </li>
-              <li>
-                2nd Stage BTM Layout Bengaluru, Karnataka 560076
-              </li>
+              <li>2nd Stage BTM Layout Bengaluru, Karnataka 560076</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60">
+        <div className="border-t border-primary-foreground/20 mt-10 pt-6 text-center text-primary-foreground/60">
           <p>
             &copy; {new Date().getFullYear()} CloudNexus Technologies. All rights
             reserved.

@@ -68,6 +68,8 @@ const TeamMemberCard = ({ member }) => {
                 <a
                   key={index}
                   href={link?.url}
+                  target={link.target || "_blank"}
+              rel={link.rel || "noopener noreferrer"}
                   className="w-8 h-8 bg-muted hover:bg-accent rounded-lg flex items-center justify-center transition-colors duration-200 group"
                   aria-label={`${member?.name} ${link?.platform}`}
                 >

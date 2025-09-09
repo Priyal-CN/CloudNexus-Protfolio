@@ -34,15 +34,11 @@ const TeamLeadership = () => {
           platform: "LinkedIn", 
           icon: "Linkedin", 
           url: "https://www.linkedin.com/in/kaustubh-singh-930770237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          target: "_blank",
-          rel: "noopener noreferrer"
         },
         { 
           platform: "GitHub", 
           icon: "Github", 
           url: "#",
-          target: "_blank",
-          rel: "noopener noreferrer"
         }
       ]
     },
@@ -64,15 +60,11 @@ const TeamLeadership = () => {
           platform: "LinkedIn", 
           icon: "Linkedin", 
           url: "https://www.linkedin.com/in/yashsingh3148?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          target: "_blank",
-          rel: "noopener noreferrer"
         },
         { 
           platform: "GitHub", 
           icon: "Github", 
           url: "#",
-          target: "_blank",
-          rel: "noopener noreferrer"
         }
       ]
     },
@@ -93,15 +85,11 @@ const TeamLeadership = () => {
           platform: "LinkedIn", 
           icon: "Linkedin", 
           url: "https://www.linkedin.com/in/aryan-patel-43224b2b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          target: "_blank",
-          rel: "noopener noreferrer"
         },
         { 
           platform: "GitHub", 
           icon: "Github", 
           url: "#",
-          target: "_blank",
-          rel: "noopener noreferrer"
         }
       ]
     },
@@ -116,15 +104,11 @@ const TeamLeadership = () => {
           platform: "LinkedIn", 
           icon: "Linkedin", 
           url: "https://www.linkedin.com/in/harsh-dwivedi17?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          target: "_blank",
-          rel: "noopener noreferrer"
         },
         { 
           platform: "GitHub", 
           icon: "Github", 
           url: "#",
-          target: "_blank",
-          rel: "noopener noreferrer"
         }
       ]
     },
@@ -139,15 +123,11 @@ const TeamLeadership = () => {
           platform: "LinkedIn", 
           icon: "Linkedin", 
           url: "https://www.linkedin.com/in/shoaib-akhtar-0b69a0192?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          target: "_blank",
-          rel: "noopener noreferrer"
         },
         { 
           platform: "GitHub", 
           icon: "Github", 
           url: "#",
-          target: "_blank",
-          rel: "noopener noreferrer"
         }
       ]
     }
