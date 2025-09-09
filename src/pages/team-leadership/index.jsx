@@ -10,8 +10,8 @@ import CEOImage from "../../assets/CEO_Image.png";
 import CTOImage from "../../assets/CTO_Image.png";
 import CMOImage from "../../assets/CMO_Image.png";
 import JavaLeadImage from "../../assets/JavaLead_Image.png";
-import MERNLeadImage from "../../assets/MERN-StackLead_.png";
 import DataLeadImg from "../../assets/DataLead_Image.png";
+import MERNLeadImg from "../../assets/MERNLead_Image .png";
 
 const TeamLeadership = () => {
   const [filteredMembers, setFilteredMembers] = useState([]);
@@ -108,7 +108,7 @@ const TeamLeadership = () => {
       id: 6,
       name: "Ajay Vishwakarma",
       position: "MERN Stack Lead",
-      avatar: MERNLeadImage,
+      avatar: MERNLeadImg,
       expertise: ["MERN Stack Developer", "Next-Gen Web Architect"],
       socialLinks: [
         {
