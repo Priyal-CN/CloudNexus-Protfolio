@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "../AppIcon";
-import Button from "./Button";
-import logo from "../../assets/logo.png";
+import logoFull from "../../assets/lgg-removebg-preview.png";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +49,7 @@ const Header = () => {
            <div className="flex items-center gap-2">
             <div className="w-12 h-12 flex items-center justify-center">
                   <img
-                    src="src\assets\lgg-removebg-preview.png"
+                    src={logoFull}
                     alt="CloudNexus Logo"
                     className="w-full h-full object-contain rounded-lg "
                   />

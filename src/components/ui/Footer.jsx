@@ -1,5 +1,6 @@
 import React from "react";
-import Icon from "../AppIcon"; // adjust path if AppIcon is elsewhere
+import Icon from "../AppIcon";
+import logo from "../../assets/logocn.png";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-30 h-10 flex items-center justify-center">
                 <img
-                  src="src/assets/logocn.png"
+                  src={logo}
                   alt="CloudNexus Logo"
                   className="w-full h-full object-contain rounded-lg"
                 />
